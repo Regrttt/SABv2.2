@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super AI Bros. - Alpha v2.2</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main-wrapper">
+        <!-- TÍTULO: Com ponto final e flocos nas pontas (alinhamento via CSS) -->
+        <h1><span class="snow-deco">❄</span>Super AI Bros.<span class="snow-deco">❄</span></h1>
+        
+        <div id="gameContainer">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            <!-- Botão de pause HTML removido (agora é no Canvas) -->
+        </div>
+        <div class="instructions">
+            <p>Use as <b>Setas</b> para mover e a <b>Barra de Espaço</b> para pular (você tem pulo duplo!).</p>
+            <p><b>Seta para Baixo</b> para atravessar plataformas.</p>
+            <p>Pressione <b>P</b> para pausar e <b>R</b> para reiniciar a qualquer momento.</p>
+            <p>Colete as moedas!</p>
+        </div>
+    </div>
+
+    <div id="modalOverlay" class="modal-overlay"></div>
+    <div id="patchNotesContainer" class="patch-notes">
+        <button id="closePatchNotes" class="close-button">&times;</button>
+        
+        <h2>Patch Notes (Alpha v2.2)</h2>
+        <p class="patch-date">13 dez, 2025</p>
+        
+        <ul>
+            <li><b>🎄 Especial de Natal:</b>
+                <ul>
+                    <li>O protagonista entrou no clima festivo e agora usa um <b>Gorro de Papai Noel</b> exclusivo desta versão!</li>
+                    <li>O título do jogo recebeu um toque especial de inverno.</li>
+                </ul>
+            </li>
+            <li><b>Melhorias de "Game Feel" (Feedback Visual):</b>
+                <ul>
+                    <li><b>Plataformas Instáveis:</b> Agora tremem visualmente e cedem lentamente antes de cair, dando tempo de reação.</li>
+                    <li><b>Perigo na Torre (Fase 2):</b> Adicionado um indicador de alerta no topo da tela antes da queda de pedras.</li>
+                    <li><b>Projéteis do Boss:</b> O ataque de energia azul agora pulsa visualmente para indicar que pode ser rebatido.</li>
+                    <li><b>Baús Interativos:</b> Baús vazios agora soltam uma nuvem de poeira cinza ao serem abertos, indicando claramente o resultado.</li>
+                </ul>
+            </li>
+            <li><b>Interface de Usuário (UI):</b>
+                <ul>
+                    <li><b>Novo Botão de Pause:</b> Integrado nativamente ao Canvas com animações suaves de escala ao passar o mouse.</li>
+                    <li><b>Feedback de Score:</b> O texto da pontuação agora pisca para celebrar quando o jogador alcança novos níveis de dificuldade (500, 1000, 1500, etc.).</li>
+                </ul>
+            </li>
+            <li><b>Otimização e Performance:</b>
+                <ul>
+                    <li>Implementado um sistema de prioridade de partículas. Efeitos visuais importantes (como rastros) têm prioridade sobre efeitos decorativos (como poeira) quando o limite de performance é atingido.</li>
+                </ul>
+            </li>
+            <li><b>Correções Técnicas:</b>
+                <ul>
+                    <li>Corrigido o bug onde pedras na Fase 2 não apareciam ou nasciam fora da tela.</li>
+                    <li>Ajustada a física de queda das plataformas para uma transição suave.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="pointingArrow">
+        <div class="arrow-body"><div class="arrow-line"></div><div class="arrow-line"></div></div>
+        <div class="arrow-head"></div>
+    </div>
+    <div id="versionLabel" class="version-label">Alpha v2.2</div>
+
+    <button id="cheatMenuButton"></button>
+    <div id="cheatInfoBox">
+        <p><b>T:</b> Pular para Fase 2</p>
+        <p><b>Numpad 7:</b> +100 Pontos</p>
+        <p><b>Numpad 8:</b> Travar Pontos (On/Off)</p>
+        <p><b>Numpad 9:</b> +1 Vida</p>
+        <p><b>Numpad 4:</b> Hitboxes (On/Off)</p>
+        <p><b>Numpad 5:</b> Invencibilidade (On/Off)</p>
+        <p><b>Numpad 6:</b> Danificar Chefe</p>
+    </div>
+
+    <script src="player.js"></script> 
+    <script src="platform.js"></script> 
+    <script src="enemy.js"></script>
+    <script src="boss.js"></script>
+    <script src="item.js"></script>
+    <script src="scenery.js"></script>
+    
+    <script src="game.js"></script>
+
+</body>
+</html>
